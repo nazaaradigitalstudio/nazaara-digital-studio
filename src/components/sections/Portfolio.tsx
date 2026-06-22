@@ -23,11 +23,11 @@ function Card({ work, onOpen, large }: { work: Work; onOpen: () => void; large: 
     >
       <div className="absolute inset-0">
         <Image
-          src={work.img as string}
+          src={(work.cardImg ?? work.img) as string}
           alt={`${work.title} site`}
           fill
           sizes="(max-width:780px) 100vw, 50vw"
-          className="object-cover object-left-top brightness-[0.94] transition-[filter,transform] duration-700 group-hover:scale-[1.04] group-hover:brightness-100"
+          className="object-cover object-top brightness-[0.96] transition-[filter,transform] duration-700 group-hover:scale-[1.04] group-hover:brightness-100"
         />
       </div>
       <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(180deg,rgba(7,7,10,0) 48%,rgba(7,7,10,.82))" }} />
@@ -97,7 +97,7 @@ function Modal({ work, onClose }: { work: Work; onClose: () => void }) {
         </button>
         {work.img && (
           <div className="relative h-[340px] overflow-hidden">
-            <Image src={work.img} alt={work.title} fill sizes="960px" className="object-cover object-left-top brightness-[0.9]" />
+            <Image src={work.img} alt={work.title} fill sizes="960px" className="object-cover object-top brightness-[0.9]" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,transparent,rgba(11,12,17,.9))" }} />
           </div>
         )}
