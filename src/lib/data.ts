@@ -59,6 +59,7 @@ export type Work = {
   title: string;
   yr?: string;
   img?: string;
+  cardImg?: string;
   invite?: boolean;
   summary: string;
   stats?: [string, string][];
@@ -71,6 +72,7 @@ export const WORK: Work[] = [
     title: "Star Public Career H.S. School",
     yr: "2026",
     img: "/work/star.jpg",
+    cardImg: "/work/star-card.jpg",
     summary:
       "A complete digital presence for an MP Board senior secondary school in Sehore, Madhya Pradesh.",
     stats: [
@@ -85,6 +87,7 @@ export const WORK: Work[] = [
     title: "LiftLab",
     yr: "2026",
     img: "/work/liftlab.jpg",
+    cardImg: "/work/liftlab-card.jpg",
     summary: "A studio exploration in adrenaline. A gym brand that should hit like the first rep.",
     stats: [
       ["Emotion", "drive + urgency"],
@@ -98,6 +101,7 @@ export const WORK: Work[] = [
     title: "Cozy Campfires",
     yr: "2026",
     img: "/work/cozy.jpg",
+    cardImg: "/work/cozy-card.jpg",
     summary: "A studio exploration in warmth. A cafe that should feel like a slow morning.",
     stats: [
       ["Emotion", "calm + comfort"],
