@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+/* ===========================================================================
+   NAZAARA — design tokens (Tailwind v4 CSS-first @theme)
+   ========================================================================= */
+@theme {
+  --color-void: #07070a;
+  --color-obsidian: #0b0c11;
+  --color-ash: #13141b;
+  --color-ash-2: #191b24;
+
+  --color-chrome: #e9eaf2;
+  --color-smoke: #9698ad;
+  --color-faint: #5b5d70;
+
+  --color-ion: #6e8bff;
+  --color-plasma: #b98bff;
+  --color-cyan: #5fe3d8;
+
+  --font-display: "Clash Display", system-ui, sans-serif;
+  --font-sans: "General Sans", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  --hairline: rgba(231, 232, 240, 0.08);
+  --hairline-strong: rgba(231, 232, 240, 0.16);
+  --grad-ion: linear-gradient(120deg, var(--color-cyan), var(--color-ion) 45%, var(--color-plasma));
+  --grad-metal: linear-gradient(150deg, #f3f4fa 0%, #c7cbdb 30%, #7d8198 60%, #dfe1ec 100%);
+  --shadow-bloom: 0 0 80px -20px rgba(110, 139, 255, 0.55);
+}
+
+/* Base element styles MUST live in @layer base so Tailwind utilities
+   (padding, margin, font, line-height, tracking) correctly override them.
+   Tailwind's own Preflight already handles the margin/padding/box-sizing reset. */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--color-void);
+    color: var(--color-chrome);
+    font-family: var(--font-sans);
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    body {
+      cursor: none;
+    }
+  }
+
+  ::selection {
+    background: rgba(110, 139, 255, 0.3);
+    color: #fff;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Project helper classes (intentionally unlayered: used standalone, no utility conflicts) */
+.metal-text {
+  background: var(--grad-metal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.ion-text {
+  background: var(--grad-ion);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.hairline {
+  border-color: var(--hairline);
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--hairline-strong);
+}
+
+/* grain overlay (fixed, pointer-events-none, never on scroll containers) */
+.grain {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 6s steps(6) infinite;
+}
+@keyframes grain {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  30% {
+    transform: translate(3%, -8%);
+  }
+  50% {
+    transform: translate(-4%, 6%);
+  }
+  70% {
+    transform: translate(6%, 4%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .grain {
+    display: none;
+  }
+  body {
+    cursor: auto;
+  }
+}
