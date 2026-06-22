@@ -39,7 +39,7 @@ export default function CTA() {
       <motion.div
         aria-hidden
         style={{ y: ghostY }}
-        className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-display text-[clamp(120px,26vw,420px)] font-semibold tracking-[-0.04em] text-[rgba(255,255,255,.025)]"
+        className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-display text-[clamp(48px,18vw,400px)] font-semibold tracking-[-0.04em] text-[rgba(255,255,255,.025)]"
       >
         NAZAARA
       </motion.div>

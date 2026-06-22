@@ -66,7 +66,8 @@ export default function Hero() {
         </h1>
 
         <motion.p
-          className="mx-auto mt-8 max-w-[540px] text-[clamp(16px,2vw,20px)] font-light text-smoke"
+          className="mx-auto mt-8 max-w-[560px] text-[clamp(16px,2vw,20px)] font-normal text-chrome/90"
+          style={{ textShadow: "0 1px 26px rgba(7,7,10,0.95), 0 0 10px rgba(7,7,10,0.8)" }}
           initial={reduce ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 1.1 }}

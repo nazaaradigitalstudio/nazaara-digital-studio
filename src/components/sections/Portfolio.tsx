@@ -31,10 +31,10 @@ function Card({ work, onOpen, large }: { work: Work; onOpen: () => void; large: 
           alt={`${work.title} site`}
           fill
           sizes="(max-width:780px) 100vw, 50vw"
-          className="object-cover object-top brightness-[0.78] grayscale-[0.35] transition-[filter,transform] duration-700 group-hover:scale-105 group-hover:brightness-[0.9] group-hover:grayscale-0"
+          className="object-cover object-top brightness-[0.94] transition-[filter,transform] duration-700 group-hover:scale-105 group-hover:brightness-100"
         />
       </motion.div>
-      <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(180deg,rgba(7,7,10,.05),rgba(7,7,10,.88))" }} />
+      <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(180deg,rgba(7,7,10,0) 48%,rgba(7,7,10,.82))" }} />
       <div className="absolute inset-x-0 bottom-0 z-[2] translate-y-2 p-7 transition-transform duration-500 group-hover:translate-y-0">
         <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-cyan">{work.cat}</span>
         <h3 className="mt-2.5 text-[clamp(24px,2.6vw,38px)]">{work.title}</h3>
