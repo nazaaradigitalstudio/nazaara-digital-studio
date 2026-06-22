@@ -23,7 +23,7 @@ export default function Nav() {
     >
       <div className="mx-auto flex w-full max-w-[1320px] items-center justify-between px-5 md:px-8">
         <a href="#top" data-cursor="home" className="flex items-center gap-2.5 font-display text-[19px] font-semibold">
-          <Image src="/logo.png" alt="Nazaara" width={26} height={32} priority className="h-[30px] w-auto" />
+          <Image src="/work/logo.png" alt="Nazaara" width={26} height={32} priority className="h-[30px] w-auto" />
           Nazaara
         </a>
 
