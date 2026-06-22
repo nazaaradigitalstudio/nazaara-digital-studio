@@ -1,21 +1,17 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { X, ArrowRight } from "lucide-react";
 import { WORK, type Work } from "@/lib/data";
 import { useStartProject } from "@/components/providers/StartProjectProvider";
 
 function Card({ work, onOpen, large }: { work: Work; onOpen: () => void; large: boolean }) {
   const reduce = useReducedMotion();
-  const ref = useRef<HTMLButtonElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], reduce ? ["0%", "0%"] : ["-8%", "8%"]);
 
   return (
     <motion.button
-      ref={ref}
       onClick={onOpen}
       data-cursor="view"
       data-card
@@ -25,15 +21,15 @@ function Card({ work, onOpen, large }: { work: Work; onOpen: () => void; large: 
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       className={`group relative block w-full overflow-hidden rounded-[18px] bg-ash text-left ${large ? "aspect-[16/11]" : "aspect-[4/3]"}`}
     >
-      <motion.div style={{ y }} className="absolute inset-[-8%]">
+      <div className="absolute inset-0">
         <Image
           src={work.img as string}
           alt={`${work.title} site`}
           fill
           sizes="(max-width:780px) 100vw, 50vw"
-          className="object-cover object-top brightness-[0.94] transition-[filter,transform] duration-700 group-hover:scale-105 group-hover:brightness-100"
+          className="object-cover object-left-top brightness-[0.94] transition-[filter,transform] duration-700 group-hover:scale-[1.04] group-hover:brightness-100"
         />
-      </motion.div>
+      </div>
       <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(180deg,rgba(7,7,10,0) 48%,rgba(7,7,10,.82))" }} />
       <div className="absolute inset-x-0 bottom-0 z-[2] translate-y-2 p-7 transition-transform duration-500 group-hover:translate-y-0">
         <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-cyan">{work.cat}</span>
@@ -101,7 +97,7 @@ function Modal({ work, onClose }: { work: Work; onClose: () => void }) {
         </button>
         {work.img && (
           <div className="relative h-[340px] overflow-hidden">
-            <Image src={work.img} alt={work.title} fill sizes="960px" className="object-cover object-top brightness-[0.85]" />
+            <Image src={work.img} alt={work.title} fill sizes="960px" className="object-cover object-left-top brightness-[0.9]" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,transparent,rgba(11,12,17,.9))" }} />
           </div>
         )}
