@@ -14,8 +14,9 @@ type Props = {
 };
 
 /**
- * Magnetic container: the wrapper drifts toward the cursor and the inner
- * content trails slightly further for a layered pull. Pure motion values.
+ * Magnetic container with a proximity field: it begins leaning toward the
+ * cursor as it approaches (not only on contact) and settles back when the
+ * cursor leaves the reach zone. Pure motion values, no re-renders.
  * Renders an anchor when given href, a button when given onClick, else a div.
  */
 export default function MagneticButton({
@@ -27,7 +28,7 @@ export default function MagneticButton({
   cursorLabel,
   strength = 0.5,
 }: Props) {
-  const { ref, x, y, onMove, onLeave } = useMagnetic(strength);
+  const { ref, x, y } = useMagnetic(strength);
   const Tag = href ? motion.a : onClick ? motion.button : motion.div;
 
   return (
@@ -37,8 +38,6 @@ export default function MagneticButton({
       onClick={onClick}
       type={onClick && !href ? type ?? "button" : undefined}
       data-cursor={cursorLabel}
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
       style={{ x, y }}
       className={`magnetic inline-block ${className ?? ""}`}
     >
