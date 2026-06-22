@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { NAV_LINKS } from "@/lib/data";
 import { useStartProject } from "@/components/providers/StartProjectProvider";
@@ -21,14 +22,8 @@ export default function Nav() {
       }
     >
       <div className="mx-auto flex w-full max-w-[1320px] items-center justify-between px-5 md:px-8">
-        <a href="#top" data-cursor="home" className="flex items-center gap-3 font-display text-[19px] font-semibold">
-          <span className="relative block h-[22px] w-[22px]">
-            <span className="absolute inset-0 rounded-full border-[1.5px] border-chrome" />
-            <span
-              className="absolute inset-[6px] rounded-full"
-              style={{ background: "var(--grad-ion)", boxShadow: "var(--shadow-bloom)" }}
-            />
-          </span>
+        <a href="#top" data-cursor="home" className="flex items-center gap-2.5 font-display text-[19px] font-semibold">
+          <Image src="/logo.png" alt="Nazaara" width={26} height={32} priority className="h-[30px] w-auto" />
           Nazaara
         </a>
 
