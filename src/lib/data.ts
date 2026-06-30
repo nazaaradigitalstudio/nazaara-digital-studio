@@ -60,6 +60,7 @@ export type Work = {
   yr?: string;
   img?: string;
   cardImg?: string;
+  url?: string;
   invite?: boolean;
   summary: string;
   stats?: [string, string][];
@@ -73,6 +74,7 @@ export const WORK: Work[] = [
     yr: "2026",
     img: "/work/star.jpg",
     cardImg: "/work/star-card.jpg",
+    url: "https://starpubliccareerhsschool.com",
     summary:
       "A complete digital presence for an MP Board senior secondary school in Sehore, Madhya Pradesh.",
     stats: [
