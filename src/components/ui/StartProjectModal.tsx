@@ -246,7 +246,7 @@ export default function StartProjectModal({ onClose }: { onClose: () => void }) 
                 <input
                   id="website"
                   className={fieldCls}
-                  placeholder="nazaara.studio"
+                  placeholder="nazaaradigitalstudio.com"
                   value={form.website}
                   onChange={(e) => set("website", e.target.value)}
                 />
