@@ -73,9 +73,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Fontshare delivery. For strict production, self-host these via
-            next/font/local with font-display: swap. */}
+        {/* Fontshare delivery. Preconnect to both the CSS host and the font CDN,
+            and preload the stylesheet so the brand fonts arrive fast and don't
+            fall back to system fonts. For maximum reliability, self-host via
+            next/font/local. */}
         <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="" />
+        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="" />
+        <link
+          rel="preload"
+          as="style"
+          href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=general-sans@300,400,500,600&f[]=space-mono@400&display=swap"
+        />
         <link
           href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=general-sans@300,400,500,600&f[]=space-mono@400&display=swap"
           rel="stylesheet"
