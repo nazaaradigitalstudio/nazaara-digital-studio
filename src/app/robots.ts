@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "*", allow: "/" },
       { userAgent: ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended"], allow: "/" },
     ],
-    sitemap: "https://nazaara.studio/sitemap.xml",
+    sitemap: "https://nazaaradigitalstudio.com/sitemap.xml",
   };
 }

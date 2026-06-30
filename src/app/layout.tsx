@@ -8,7 +8,7 @@ import Grain from "@/components/ui/Grain";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import Nav from "@/components/layout/Nav";
 
-const SITE = "https://nazaara.studio";
+const SITE = "https://nazaaradigitalstudio.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
