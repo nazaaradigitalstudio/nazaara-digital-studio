@@ -105,6 +105,18 @@ function Modal({ work, onClose }: { work: Work; onClose: () => void }) {
           <div className="font-mono text-xs uppercase tracking-[0.24em] text-cyan">{work.cat}</div>
           <h3 className="mb-2 mt-3.5 text-[clamp(34px,5vw,60px)]">{work.title}</h3>
           <p className="max-w-[620px] text-lg font-light text-smoke">{work.summary}</p>
+          {work.url && (
+            <a
+              href={work.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="visit"
+              className="mt-5 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-cyan transition-colors hover:text-chrome"
+            >
+              {work.url.replace(/^https?:\/\//, "")}
+              <ArrowRight className="h-4 w-4 -rotate-45" />
+            </a>
+          )}
           {work.stats && (
             <div className="my-10 grid grid-cols-1 gap-6 border-y border-[var(--hairline)] py-7 md:grid-cols-3">
               {work.stats.map(([n, l]) => (
@@ -126,9 +138,9 @@ export default function Portfolio() {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <section id="work" className="py-32 pb-16">
+    <section id="work" className="py-20 pb-10 md:py-32 md:pb-16">
       <div className="mx-auto max-w-[1320px] px-5 md:px-8">
-        <div className="mb-20 flex flex-col gap-5">
+        <div className="mb-12 flex flex-col gap-5 md:mb-20">
           <span className="eyebrow">Selected work</span>
           <h2 className="text-[clamp(34px,5.5vw,76px)]">Gravity, applied.</h2>
           <p className="max-w-[560px] font-light text-smoke">

@@ -41,7 +41,7 @@ export default function Manifesto() {
         </motion.div>
       </div>
 
-      <div className="mx-auto mt-28 max-w-[980px] px-5 md:px-8">
+      <div className="mx-auto mt-16 max-w-[980px] md:mt-28 px-5 md:px-8">
         <p ref={ref} className="font-display text-[clamp(24px,4vw,46px)] font-normal leading-[1.18] tracking-[-0.02em] text-smoke">
           {words.map((word, i) => {
             const start = i / words.length;

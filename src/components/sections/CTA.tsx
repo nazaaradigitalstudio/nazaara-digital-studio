@@ -27,7 +27,7 @@ export default function CTA() {
   }
 
   return (
-    <section id="contact" ref={ref} onMouseMove={onMove} className="relative overflow-hidden py-48 text-center">
+    <section id="contact" ref={ref} onMouseMove={onMove} className="relative overflow-hidden py-28 text-center md:py-48">
       <motion.div
         aria-hidden
         style={{ left: spotX, top: spotY, x: "-50%", y: "-50%" }}

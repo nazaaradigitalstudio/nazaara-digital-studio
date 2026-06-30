@@ -50,9 +50,9 @@ export default function Process() {
   const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section className="py-40">
+    <section className="py-24 md:py-40">
       <div className="mx-auto max-w-[1320px] px-5 md:px-8">
-        <div className="mb-20 flex flex-col items-center gap-5 text-center">
+        <div className="mb-12 flex flex-col items-center gap-5 text-center md:mb-20">
           <h2 className="text-[clamp(34px,5.5vw,76px)]">How the pull is built</h2>
         </div>
 

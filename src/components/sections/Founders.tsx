@@ -16,9 +16,9 @@ export default function Founders() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="py-32 md:py-40">
+    <section className="py-20 md:py-40">
       <div className="mx-auto max-w-[1320px] px-5 md:px-8">
-        <div className="mb-20 flex flex-col gap-5">
+        <div className="mb-12 flex flex-col gap-5 md:mb-20">
           <span className="eyebrow">The studio</span>
           <h2 className="text-[clamp(34px,5.5vw,76px)]">
             Two instincts.
@@ -53,7 +53,7 @@ export default function Founders() {
 
           {/* The Eye */}
           <motion.div
-            className="relative border-b border-[var(--hairline)] px-6 py-14 md:border-b-0 md:border-r md:px-12"
+            className="relative border-b border-[var(--hairline)] px-6 py-11 md:border-b-0 md:border-r md:px-12"
             initial={reduce ? false : { x: -60, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -70,7 +70,7 @@ export default function Founders() {
 
           {/* The Hand */}
           <motion.div
-            className="relative flex flex-col items-start px-6 py-14 text-left md:items-end md:px-12 md:text-right"
+            className="relative flex flex-col items-start px-6 py-11 text-left md:items-end md:px-12 md:text-right"
             initial={reduce ? false : { x: 60, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.4 }}

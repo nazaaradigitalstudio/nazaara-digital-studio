@@ -85,9 +85,9 @@ function Card({ service, Icon }: { service: Service; Icon: typeof Code2 }) {
 
 export default function Services() {
   return (
-    <section id="services" className="py-32">
+    <section id="services" className="py-20 md:py-32">
       <div className="mx-auto max-w-[1320px] px-5 md:px-8">
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <h2 className="text-[clamp(34px,5.5vw,76px)]">What we build</h2>
         </div>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">

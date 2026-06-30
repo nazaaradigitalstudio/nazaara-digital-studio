@@ -14,7 +14,7 @@ export default function Footer() {
           <h3 className="max-w-[600px] text-[clamp(34px,5vw,68px)] tracking-[-0.02em]">
             Let&apos;s build something with mass.
           </h3>
-          <div className="flex flex-wrap gap-14">
+          <div className="flex flex-wrap gap-8 md:gap-14">
             <div>
               <div className="mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-faint">Studio</div>
               {[
@@ -31,6 +31,9 @@ export default function Footer() {
               <a href="tel:+917799339922" className="mb-2.5 block text-smoke transition-colors hover:text-chrome">
                 +91 77993 39922
               </a>
+              <a href="tel:+917428257741" className="mb-2.5 block text-smoke transition-colors hover:text-chrome">
+                +91 74282 57741
+              </a>
               <a href="mailto:nazaaradigitalstudio@gmail.com" className="mb-2.5 block text-smoke transition-colors hover:text-chrome">
                 nazaaradigitalstudio@gmail.com
               </a>
@@ -45,7 +48,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-20 flex flex-wrap justify-between gap-3.5 border-t border-[var(--hairline)] pt-7 text-[13px] text-faint">
+        <div className="mt-14 flex flex-wrap justify-between gap-3.5 md:mt-20 border-t border-[var(--hairline)] pt-7 text-[13px] text-faint">
           <span>© 2026 Nazaara Digital Studio</span>
           <span className="font-mono">नज़ारा · a view worth beholding</span>
         </div>

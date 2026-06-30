@@ -20,7 +20,7 @@ export default function Hero() {
   });
 
   return (
-    <header ref={ref} id="top" className="relative flex min-h-[100dvh] flex-col justify-start overflow-hidden px-5 pb-14 pt-16 md:px-8">
+    <header ref={ref} id="top" className="relative flex min-h-[100dvh] flex-col justify-center md:justify-start overflow-hidden px-5 pb-14 pt-16 md:px-8">
       <motion.div
         aria-hidden
         style={{ y: bloomA }}
@@ -48,7 +48,7 @@ export default function Hero() {
           Digital studio. Built in India, tuned for the world.
         </motion.div>
 
-        <h1 className="font-display text-[clamp(34px,9vw,144px)] font-semibold leading-[1.02] tracking-[-0.045em]">
+        <h1 className="font-display text-[clamp(40px,10vw,168px)] font-semibold leading-[1.02] tracking-[-0.045em]">
           <span className="block overflow-hidden pb-[0.14em]">
             <motion.span className="block" {...lineReveal(0)}>We don&apos;t make</motion.span>
           </span>
